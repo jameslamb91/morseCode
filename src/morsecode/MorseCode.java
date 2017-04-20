@@ -33,33 +33,6 @@ public class MorseCode {
         }
     }
     public static void toEnglish(){
-         /**try {
-                
-                int ch;
-                int lastCh = -1;
-                while ((ch = System.in.read()) != -1){
-                    
-                    int indexOf = morseAlphabet.indexOf(ch);
-                    
-                    if (ch == ' ' && lastCh == ' '){
-                        continue;
-                    }
-                    if(indexOf >= 0){
-                        System.out.print(alphabet.charAt(((indexOf + key) % (alphabet.length()))));
-                    }
-                    else if (ch == '\n' || ch == '\r'){
-                        ch = ' ';
-                        indexOf = englishAlphabet.indexOf(ch);
-                        System.out.print(englishAlphabet.charAt(((indexOf + key) % (englishAlphabet.length()))));
-                    }
-                    else {
-                        continue;
-                    }
-                    lastCh = ch;
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(MorseCode.class.getName()).log(Level.SEVERE, null, ex);
-            }**/
         System.out.print("This function is currently unavailable.");
         System.exit(10);
     }
