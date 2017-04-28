@@ -13,7 +13,7 @@ public class MorseCode {
     static String englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     static String[] morseAlphabet = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", 
     "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", 
-    "", "-.--", "--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----."};
+    "-.--", "--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----."};
 
     public static void main(String[] args) {
     //Check for appropriate option code
@@ -33,8 +33,45 @@ public class MorseCode {
         }
     }
     public static void toEnglish(){
-        System.out.print("This function is currently unavailable.");
-        System.exit(10);
+        //System.out.print("This function is currently unavailable.");
+        System.out.println("In order to ensure proper translation, please seperate individual letters with a space.");
+        try {
+                
+                int ch;
+                String toEng = "";
+                
+                while ((ch = System.in.read()) != -1){
+                    if (ch == ' ' || ch == '\n' || ch == '\r'){
+                         int indexOf = -1;
+                         for(int i = 0; i < morseAlphabet.length; i++){
+                             if(morseAlphabet[i].equals(toEng)){
+                               indexOf = i;
+                               toEng = "";
+                               break;
+                             }
+                         } 
+                         if (indexOf < 0){
+                             continue;
+                         }
+                         else {
+                            System.out.print(englishAlphabet.charAt(indexOf));
+                            continue;
+                         }
+                    }
+                    
+                    else if(ch == '.'){
+                        toEng = toEng.concat(".");
+                    }
+                    else if(ch == '-'){
+                        toEng = toEng.concat("-");
+                    }
+                    
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(MorseCode.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        //System.exit(10);
     }
     public static void toMorse(){
         try {
